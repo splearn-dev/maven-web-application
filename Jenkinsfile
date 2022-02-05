@@ -13,6 +13,7 @@ node{
     {
       sh "${mavenHome}/bin/mvn clean sonar:sonar"   
     }
+    /*
     stage('UploadArtifactsintoNexus')
     {
          sh "${mavenHome}/bin/mvn clean deploy"
@@ -23,6 +24,7 @@ sshagent(['f84ff74c-c358-49bb-aaae-ff1759706d35']) {
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.110.173.98:/opt/apache-tomcat-9.0.56/webapps/"
 }
 }
+*/
 stage('SendEmailNotification')
 {
     emailext body: '''Build is over !!
